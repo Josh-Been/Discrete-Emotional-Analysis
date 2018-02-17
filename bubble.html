@@ -1,0 +1,35 @@
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Valence', 'Arousal', 'Decade',     'Dominance'],
+!!! HERE
+      ]);
+
+      var options = {
+        title: 'Correlation between Valence, Arousal, and Dominance ',
+        hAxis: {title: 'Valence'},
+        vAxis: {title: 'Arousal'},
+		sizeAxis:{maxSize:10, minSize:1},
+        bubble: {
+          textStyle: {
+            auraColor: 'none',
+          }
+        }
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('noAura'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="noAura" style="width: 1000px; height: 600px;"></div>
+</body>
+</html>
